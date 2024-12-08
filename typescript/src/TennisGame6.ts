@@ -40,20 +40,7 @@ export class TennisGame6 implements TennisGame {
     }
     else if (this.player1Score >= 4 || this.player2Score >= 4)
     {
-      // end-game score
-      let endGameScore: string;
-
-      if (this.player1Score - this.player2Score == 1) {
-        endGameScore = "Advantage " + this.player1Name;
-      } else if (this.player1Score - this.player2Score == -1) {
-        endGameScore = "Advantage " + this.player2Name;
-      } else if (this.player1Score - this.player2Score >= 2) {
-        endGameScore = "Win for " + this.player1Name;
-      } else {
-        endGameScore = "Win for " + this.player2Name;
-      }
-
-      result = endGameScore;
+      result = this.endGameScore();
     }
     else
     {
@@ -100,6 +87,23 @@ export class TennisGame6 implements TennisGame {
 
     return result;
 
+  }
+
+  private endGameScore() {
+    // end-game score
+    let endGameScore: string;
+
+    if (this.player1Score - this.player2Score == 1) {
+      endGameScore = "Advantage " + this.player1Name;
+    } else if (this.player1Score - this.player2Score == -1) {
+      endGameScore = "Advantage " + this.player2Name;
+    } else if (this.player1Score - this.player2Score >= 2) {
+      endGameScore = "Win for " + this.player1Name;
+    } else {
+      endGameScore = "Win for " + this.player2Name;
+    }
+
+    return endGameScore;
   }
 
   wonPoint(playerName: string): void {
