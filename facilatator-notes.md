@@ -14,6 +14,7 @@
   - extract subfunction -> N/A
   - remove dead code -> remove unused variable, N/A
 [] set timer for demo
+[] practice branch name (starting-point-dec-9-2024)
 
 # notes to review
 
