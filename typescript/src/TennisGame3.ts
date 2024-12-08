@@ -14,8 +14,8 @@ export class TennisGame3 implements TennisGame {
   getScore(): string {
     if (this.player1Score < 4 && this.player2Score < 4 && !(this.player1Score + this.player2Score === 6)) {
       const allScoreNames: string[] = ['Love', 'Fifteen', 'Thirty', 'Forty'];
-      let tennisResult = allScoreNames[this.player1Score];
-      return (this.player1Score === this.player2Score) ? tennisResult + '-All' : tennisResult + '-' + allScoreNames[this.player2Score];
+      let scoreName = allScoreNames[this.player1Score];
+      return (this.player1Score === this.player2Score) ? scoreName + '-All' : scoreName + '-' + allScoreNames[this.player2Score];
     } else {
       if (this.player1Score === this.player2Score)
         return 'Deuce';
