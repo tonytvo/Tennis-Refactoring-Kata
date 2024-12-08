@@ -12,7 +12,7 @@ export class TennisGame3 implements TennisGame {
   }
 
   getScore(): string {
-    let isEndGame = !(this.player1Score < 4 && this.player2Score < 4 && !(this.player1Score + this.player2Score === 6));
+    let isEndGame = this.player1Score >= 4 || this.player2Score >= 4 || this.player1Score + this.player2Score === 6;
     if (isEndGame) {
       if (this.player1Score === this.player2Score)
         return 'Deuce';
