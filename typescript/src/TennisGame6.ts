@@ -1,4 +1,4 @@
-import { TennisGame } from './TennisGame';
+import {TennisGame} from './TennisGame';
 
 export class TennisGame6 implements TennisGame {
   private player2Name : string;
@@ -53,8 +53,6 @@ export class TennisGame6 implements TennisGame {
 
   private regularScore() {
     // regular score
-    let regularScore: string;
-
     let score1: string;
 
     switch (this.player1Score) {
@@ -88,9 +86,7 @@ export class TennisGame6 implements TennisGame {
         break;
     }
 
-    regularScore = score1 + "-" + score2;
-
-    return regularScore;
+    return score1 + "-" + score2;
   }
 
   private endGameScore() {
