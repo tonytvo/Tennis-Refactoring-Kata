@@ -1,4 +1,4 @@
-import { TennisGame } from './TennisGame';
+import {TennisGame} from './TennisGame';
 
 export class TennisGame3 implements TennisGame {
   private player2Score: number = 0;
@@ -12,8 +12,7 @@ export class TennisGame3 implements TennisGame {
   }
 
   getScore(): string {
-    let isNotYetEndGame = this.player1Score < 4 && this.player2Score < 4 && !(this.player1Score + this.player2Score === 6);
-    let isEndGame = !isNotYetEndGame;
+    let isEndGame = !(this.player1Score < 4 && this.player2Score < 4 && !(this.player1Score + this.player2Score === 6));
     if (isEndGame) {
       if (this.player1Score === this.player2Score)
         return 'Deuce';
