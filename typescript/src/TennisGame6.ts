@@ -14,18 +14,13 @@ export class TennisGame6 implements TennisGame {
   }
 
   getScore(): string {
-    if (this.player1Score == this.player2Score)
-    {
+    if (this.player1Score == this.player2Score) {
       return this.tieScore();
     }
-    else if (this.player1Score >= 4 || this.player2Score >= 4)
-    {
+    if (this.player1Score >= 4 || this.player2Score >= 4) {
       return this.endGameScore();
     }
-    else
-    {
-      return this.regularScore();
-    }
+    return this.regularScore();
   }
 
   private tieScore() {
