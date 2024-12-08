@@ -18,25 +18,7 @@ export class TennisGame6 implements TennisGame {
 
     if (this.player1Score == this.player2Score)
     {
-      // tie score
-      let tieScore: string;
-      switch (this.player1Score)
-      {
-        case 0:
-          tieScore = "Love-All";
-          break;
-        case 1:
-          tieScore = "Fifteen-All";
-          break;
-        case 2:
-          tieScore = "Thirty-All";
-          break;
-        default:
-          tieScore = "Deuce";
-          break;
-      }
-
-      result = tieScore;
+      result = this.tieScore();
     }
     else if (this.player1Score >= 4 || this.player2Score >= 4)
     {
@@ -49,6 +31,27 @@ export class TennisGame6 implements TennisGame {
 
     return result;
 
+  }
+
+  private tieScore() {
+    // tie score
+    let tieScore: string;
+    switch (this.player1Score) {
+      case 0:
+        tieScore = "Love-All";
+        break;
+      case 1:
+        tieScore = "Fifteen-All";
+        break;
+      case 2:
+        tieScore = "Thirty-All";
+        break;
+      default:
+        tieScore = "Deuce";
+        break;
+    }
+
+    return tieScore;
   }
 
   private regularScore() {
