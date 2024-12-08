@@ -26,11 +26,8 @@ export class TennisGame6 implements TennisGame {
     }
     else
     {
-      result = this.regularScore();
+      return this.regularScore();
     }
-
-    return result;
-
   }
 
   private tieScore() {
