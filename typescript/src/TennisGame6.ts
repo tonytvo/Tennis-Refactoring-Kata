@@ -18,7 +18,7 @@ export class TennisGame6 implements TennisGame {
 
     if (this.player1Score == this.player2Score)
     {
-      result = this.tieScore();
+      return this.tieScore();
     }
     else if (this.player1Score >= 4 || this.player2Score >= 4)
     {
