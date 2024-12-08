@@ -12,16 +12,16 @@ export class TennisGame3 implements TennisGame {
   }
 
   getScore(): string {
-    let s: string;
+    let score: string;
     if (this.player1Score < 4 && this.player2Score < 4 && !(this.player1Score + this.player2Score === 6)) {
       const p: string[] = ['Love', 'Fifteen', 'Thirty', 'Forty'];
-      s = p[this.player1Score];
-      return (this.player1Score === this.player2Score) ? s + '-All' : s + '-' + p[this.player2Score];
+      score = p[this.player1Score];
+      return (this.player1Score === this.player2Score) ? score + '-All' : score + '-' + p[this.player2Score];
     } else {
       if (this.player1Score === this.player2Score)
         return 'Deuce';
-      s = this.player1Score > this.player2Score ? this.player1Name : this.player2Name;
-      return (((this.player1Score - this.player2Score) * (this.player1Score - this.player2Score)) === 1) ? 'Advantage ' + s : 'Win for ' + s;
+      score = this.player1Score > this.player2Score ? this.player1Name : this.player2Name;
+      return (((this.player1Score - this.player2Score) * (this.player1Score - this.player2Score)) === 1) ? 'Advantage ' + score : 'Win for ' + score;
     }
   }
 
