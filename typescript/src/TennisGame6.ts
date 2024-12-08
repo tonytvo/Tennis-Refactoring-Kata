@@ -22,7 +22,7 @@ export class TennisGame6 implements TennisGame {
     }
     else if (this.player1Score >= 4 || this.player2Score >= 4)
     {
-      result = this.endGameScore();
+      return this.endGameScore();
     }
     else
     {
