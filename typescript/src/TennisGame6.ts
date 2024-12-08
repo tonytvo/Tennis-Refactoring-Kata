@@ -57,14 +57,14 @@ export class TennisGame6 implements TennisGame {
   private regularScore() {
     // regular score
     let score1 = this.player1ScoreName(this.player1Score);
-    let score2 = this.player2ScoreName();
+    let score2 = this.player2ScoreName(this.player2Score);
 
     return score1 + "-" + score2;
   }
 
-  private player2ScoreName() {
+  private player2ScoreName(playerScore: number) {
     let scoreName: string;
-    switch (this.player2Score) {
+    switch (playerScore) {
       case 0:
         scoreName = "Love";
         break;
