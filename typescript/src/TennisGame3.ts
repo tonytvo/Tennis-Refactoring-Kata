@@ -15,12 +15,12 @@ export class TennisGame3 implements TennisGame {
     let tennisResult: string;
     if (this.player1Score < 4 && this.player2Score < 4 && !(this.player1Score + this.player2Score === 6)) {
       const allScoreNames: string[] = ['Love', 'Fifteen', 'Thirty', 'Forty'];
-      tennisResult = allScoreNames[this.player1Score];
+      let tennisResult = allScoreNames[this.player1Score];
       return (this.player1Score === this.player2Score) ? tennisResult + '-All' : tennisResult + '-' + allScoreNames[this.player2Score];
     } else {
       if (this.player1Score === this.player2Score)
         return 'Deuce';
-      tennisResult = this.player1Score > this.player2Score ? this.player1Name : this.player2Name;
+      let tennisResult = this.player1Score > this.player2Score ? this.player1Name : this.player2Name;
       return (((this.player1Score - this.player2Score) * (this.player1Score - this.player2Score)) === 1) ? 'Advantage ' + tennisResult : 'Win for ' + tennisResult;
     }
   }
