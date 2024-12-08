@@ -56,7 +56,7 @@ export class TennisGame6 implements TennisGame {
 
   private regularScore() {
     // regular score
-    let score1 = this.player1ScoreName(this.player1Score);
+    let score1 = this.player2ScoreName(this.player1Score);
     let score2 = this.player2ScoreName(this.player2Score);
 
     return score1 + "-" + score2;
@@ -79,10 +79,6 @@ export class TennisGame6 implements TennisGame {
         break;
     }
     return scoreName;
-  }
-
-  private player1ScoreName(playerScore: number) {
-    return this.player2ScoreName(playerScore);
   }
 
   private endGameScore() {
