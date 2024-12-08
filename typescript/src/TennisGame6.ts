@@ -14,8 +14,6 @@ export class TennisGame6 implements TennisGame {
   }
 
   getScore(): string {
-    let result: string;
-
     if (this.player1Score == this.player2Score)
     {
       return this.tieScore();
