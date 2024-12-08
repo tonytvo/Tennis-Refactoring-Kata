@@ -19,8 +19,8 @@ export class TennisGame3 implements TennisGame {
     } else {
       if (this.player1Score === this.player2Score)
         return 'Deuce';
-      let tennisResult = this.player1Score > this.player2Score ? this.player1Name : this.player2Name;
-      return (((this.player1Score - this.player2Score) * (this.player1Score - this.player2Score)) === 1) ? 'Advantage ' + tennisResult : 'Win for ' + tennisResult;
+      let playerName = this.player1Score > this.player2Score ? this.player1Name : this.player2Name;
+      return (((this.player1Score - this.player2Score) * (this.player1Score - this.player2Score)) === 1) ? 'Advantage ' + playerName : 'Win for ' + playerName;
     }
   }
 
