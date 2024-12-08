@@ -44,49 +44,53 @@ export class TennisGame6 implements TennisGame {
     }
     else
     {
-      // regular score
-      let regularScore: string;
-
-      let score1: string;
-
-      switch (this.player1Score) {
-        case 0:
-          score1 = "Love";
-          break;
-        case 1:
-          score1 = "Fifteen";
-          break;
-        case 2:
-          score1 = "Thirty";
-          break;
-        default:
-          score1 = "Forty";
-          break;
-      }
-
-      let score2: string;
-      switch (this.player2Score) {
-        case 0:
-          score2 = "Love";
-          break;
-        case 1:
-          score2 = "Fifteen";
-          break;
-        case 2:
-          score2 = "Thirty";
-          break;
-        default:
-          score2 = "Forty";
-          break;
-      }
-
-      regularScore = score1 + "-" + score2;
-
-      result = regularScore;
+      result = this.regularScore();
     }
 
     return result;
 
+  }
+
+  private regularScore() {
+    // regular score
+    let regularScore: string;
+
+    let score1: string;
+
+    switch (this.player1Score) {
+      case 0:
+        score1 = "Love";
+        break;
+      case 1:
+        score1 = "Fifteen";
+        break;
+      case 2:
+        score1 = "Thirty";
+        break;
+      default:
+        score1 = "Forty";
+        break;
+    }
+
+    let score2: string;
+    switch (this.player2Score) {
+      case 0:
+        score2 = "Love";
+        break;
+      case 1:
+        score2 = "Fifteen";
+        break;
+      case 2:
+        score2 = "Thirty";
+        break;
+      default:
+        score2 = "Forty";
+        break;
+    }
+
+    regularScore = score1 + "-" + score2;
+
+    return regularScore;
   }
 
   private endGameScore() {
