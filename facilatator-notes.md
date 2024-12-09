@@ -1,20 +1,22 @@
 # prepared checklists
 
-[] Watch prior setup video for guided learning practices.  
+[x] Watch prior setup video for guided learning practices.  
 [] Access shared resources, such as a whiteboard.
 [] Ensure exercises are accessible (setup code and tools).  
-[] Provide team access to refactoring documentation. 
+[] Provide team access to refactoring documentation.
   - https://refactoring.com/catalog/
-[] book the session
-[] list of refactoring names in webstorm
+  - https://www.jetbrains.com/help/idea/refactoring-source-code.html
+[x] book the session
+[] list of refactoring names in webstorm (do this, in the activity section)
   - rename variables -> rename...
   - break dependencies -> N/A
   - move up/down method -> pull members up/down
   - extract method -> extract method
   - extract subfunction -> N/A
   - remove dead code -> remove unused variable, N/A
-[] set timer for demo
 [] practice branch name (starting-point-dec-9-2024)
+[] tiles for sponsoring
+[] linked in posts
 
 # notes to review
 
@@ -114,6 +116,7 @@ Here's a detailed outline based on the transcript provided for **"REFACTORING: W
       - if everyone struggling, we should be struggling together
       - what name should I use here?
       - what short-cut should I use for rename?
+      - have the refactoring menu ready so people can see.
 
 - **Time Management**  
   - Allocate time for reflection and conclusions.
