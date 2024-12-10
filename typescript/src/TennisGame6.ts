@@ -1,4 +1,4 @@
-import { TennisGame } from './TennisGame';
+import {TennisGame} from './TennisGame';
 
 export class TennisGame6 implements TennisGame {
   private player2Name : string;
@@ -14,92 +14,78 @@ export class TennisGame6 implements TennisGame {
   }
 
   getScore(): string {
-    let result: string;
-
-    if (this.player1Score == this.player2Score)
-    {
-      // tie score
-      let tieScore: string;
-      switch (this.player1Score)
-      {
-        case 0:
-          tieScore = "Love-All";
-          break;
-        case 1:
-          tieScore = "Fifteen-All";
-          break;
-        case 2:
-          tieScore = "Thirty-All";
-          break;
-        default:
-          tieScore = "Deuce";
-          break;
-      }
-
-      result = tieScore;
+    if (this.player1Score == this.player2Score) {
+      return this.tieScore();
     }
-    else if (this.player1Score >= 4 || this.player2Score >= 4)
-    {
-      // end-game score
-      let endGameScore: string;
-
-      if (this.player1Score - this.player2Score == 1) {
-        endGameScore = "Advantage " + this.player1Name;
-      } else if (this.player1Score - this.player2Score == -1) {
-        endGameScore = "Advantage " + this.player2Name;
-      } else if (this.player1Score - this.player2Score >= 2) {
-        endGameScore = "Win for " + this.player1Name;
-      } else {
-        endGameScore = "Win for " + this.player2Name;
-      }
-
-      result = endGameScore;
+    if (this.player1Score >= 4 || this.player2Score >= 4) {
+      return this.endGameScore();
     }
-    else
-    {
-      // regular score
-      let regularScore: string;
+    return this.regularScore();
+  }
 
-      let score1: string;
-
-      switch (this.player1Score) {
-        case 0:
-          score1 = "Love";
-          break;
-        case 1:
-          score1 = "Fifteen";
-          break;
-        case 2:
-          score1 = "Thirty";
-          break;
-        default:
-          score1 = "Forty";
-          break;
-      }
-
-      let score2: string;
-      switch (this.player2Score) {
-        case 0:
-          score2 = "Love";
-          break;
-        case 1:
-          score2 = "Fifteen";
-          break;
-        case 2:
-          score2 = "Thirty";
-          break;
-        default:
-          score2 = "Forty";
-          break;
-      }
-
-      regularScore = score1 + "-" + score2;
-
-      result = regularScore;
+  private tieScore() {
+    // tie score
+    let tieScore: string;
+    switch (this.player1Score) {
+      case 0:
+        tieScore = "Love-All";
+        break;
+      case 1:
+        tieScore = "Fifteen-All";
+        break;
+      case 2:
+        tieScore = "Thirty-All";
+        break;
+      default:
+        tieScore = "Deuce";
+        break;
     }
 
-    return result;
+    return tieScore;
+  }
 
+  private regularScore() {
+    // regular score
+    let score1 = this.playerScoreName(this.player1Score);
+    let score2 = this.playerScoreName(this.player2Score);
+
+    return score1 + "-" + score2;
+  }
+
+  private playerScoreName(playerScore: number) {
+    let scoreName: string;
+    switch (playerScore) {
+      case 0:
+        scoreName = "Love";
+        break;
+      case 1:
+        scoreName = "Fifteen";
+        break;
+      case 2:
+        scoreName = "Thirty";
+        break;
+      default:
+        scoreName = "Forty";
+        break;
+    }
+    return scoreName;
+  }
+
+  private endGameScore() {
+    // end-game score
+    let endGameScore: string;
+
+    if (this.player1Score - this.player2Score == 1) {
+      endGameScore = "Advantage " + this.player1Name;
+    } else if (this.player1Score - this.player2Score == -1) {
+      endGameScore = "Advantage " + this.player2Name;
+    } else if (this.player1Score - this.player2Score >= 2) {
+      endGameScore = "Win for " + this.player1Name;
+    } else {
+      endGameScore = "Win for " + this.player2Name;
+    }
+
+    return endGameScore;
   }
 
   wonPoint(playerName: string): void {
